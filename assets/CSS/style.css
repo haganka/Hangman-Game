@@ -12,3 +12,7 @@ body {
     height: 60%;
     text-align: center;
 }
+
+.violet {
+    background-color: rgb(243, 188, 243);
+}
