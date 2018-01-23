@@ -16,3 +16,7 @@ body {
 .violet {
     background-color: rgb(243, 188, 243);
 }
+
+.hide {
+    visibility: hidden;
+}
