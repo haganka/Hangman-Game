@@ -6,7 +6,10 @@
         var hasWon = false;
         var guesses = [];
         var wins = 0;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6531a218fa108c5ff7645f9518a00093b3f1bbcd
        
         //chooses random word
         var randWord = function(){
@@ -16,9 +19,13 @@
         var randChoice = randWord();
             console.log("randChoice", randChoice);
 
+<<<<<<< HEAD
+        var wordArr = randChoice.split(""); 
+=======
 
         var wordArr = randChoice.split(""); 
 
+>>>>>>> 6531a218fa108c5ff7645f9518a00093b3f1bbcd
         
         //Adds underscores to page
         // var randChoiceArr = randChoice.split("");
@@ -61,18 +68,19 @@
                 
                 if(hasWon){
                     wins++;
-                    // alert("you did it!");
-                    // console.log("you did it")
+                    alert("you did it!");
     
                     var winsElem = document.querySelector("#wins");
                     winsElem.innerHTML = wins;
 
-                    correctGuesses = [];
-                    lives = [];
-                    guesses = [];
-                    randWord();
-                    startGame();
                 }
+                startGame();
+
+                //create reset button 
+                // var randChoice = randWord();
+                // correctGuesses = [];
+                // lives = [];
+                // guesses = [];
             }
 
         
@@ -93,6 +101,18 @@
             
         }
 
+<<<<<<< HEAD
+
+        document.addEventListener("keyup", startGame);
+        //$("body").on("keyup", startGame);
+        startGame();
+       
+
+        console.log("player stats", player);
+
+
+        // return player;
+=======
         document.addEventListener("keyup", startGame);
         //$("body").on("keyup", startGame);
         startGame();
@@ -104,3 +124,4 @@
 
         // return player;
        
+>>>>>>> 6531a218fa108c5ff7645f9518a00093b3f1bbcd
