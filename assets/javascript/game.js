@@ -1,6 +1,10 @@
         //creates array
         var campWords = ["smore", "campfire", "fishing", "canoe", "tent"];
-        
+        var lives = 7;
+        var hasMatch = false;
+        var correctGuesses = [];
+        var hasWon = false;
+        var guesses = [];
        
         //chooses random word
         var randWord = function(){
@@ -9,12 +13,14 @@
         //stores random word chosen
         var randChoice = randWord();
             console.log("randChoice", randChoice);
+
+        var wordArr = randChoice.split(""); //this is now equal to ['s', 'm', 'o', 'r', 'e'];
         
         //Adds underscores to page
-        var randChoiceArr = randChoice.split("");
+        // var randChoiceArr = randChoice.split("");
         
         var underscoreHTML = "";
-        for (var i = 0; i < randChoiceArr.length; i++){
+        for (var i = 0; i < wordArr.length; i++){
             underscoreHTML += "_ " ;
         }
         var randChoiceElem = document.querySelector("#mysteryWord");
@@ -26,16 +32,11 @@
         // document.addEventListener("keyup", event.key)
         // }
         
-        var lives = 7;
-        var wordArr = randChoice.split(""); //this is now equal to ['s', 'm', 'o', 'r', 'e'];
-        var hasMatch = false;
-        var correctGuesses = [];
-
         //prompts user to enter letter - # of tries = numGuesses
-        var guesses = [];
 
         var gamePlay = function (){
-            while(lives > 0){
+            while(lives > 0 && !hasWon){ //shorthand for !== true
+                hasMatch = false;
                 var playerGuess = prompt("Guess a letter");
                 guesses.push(playerGuess);
                 console.log("guesses", guesses);
@@ -48,17 +49,40 @@
                         
                     }else{
                         hasMatch = false;
-                        // numGuesses--;
-                        // console.log("lives left", numGuesses);
+                        // lives--;
+                        // console.log("lives left", lives);
                         }
-
-                        if(hasMatch === false){
-                            lives--;
-                        }
-    
                     }
+                    if(hasMatch === false){
+                        lives--;
+                        console.log("lives left", lives)
+                    }
+
+                    hasWon = arrayContainsArray(guesses, wordArr);
+                        console.log("win?", hasWon);
+
+                // for(var i = 0; i < guesses.length; i++){
+                //     if(guesses.includes(wordArr[i])){
+                //         if(guesses.length >= wordArr.length){
+                //             hasWon = true;
+                //     }
+
+
+                // }
+
                 }
             }
+        
+            function arrayContainsArray (superset, subset) {
+                if (0 === subset.length) {
+                  return false;
+                }
+                return subset.every(function (value) {
+                  return (superset.indexOf(value) >= 0);
+                });
+              }
+
+
 
             // if(hasMatch === false){
             //     numGuesses --;
