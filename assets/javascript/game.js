@@ -35,31 +35,25 @@
         var guessesElem = document.querySelector("#lettersDone");
         guessesElem.innerHTML = guesses;
         lives = 7;
+        var livesElem = document.querySelector("#lives");
+        livesElem.innerHTML = lives;
         correctGuesses = [];
         guessedWord = [];
-        //chooses random word
-        //stores random word chosen
         var randChoice = randWord();
             console.log("randChoice", randChoice);
 
-
-
         wordArr = randChoice.split(""); 
-
-        
-        //Adds underscores to page
-        // var randChoiceArr = randChoice.split("");
         
         var underscoreHTML = "";
         for (var i = 0; i < wordArr.length; i++){
-            // underscoreHTML += "_ " ;
+            underscoreHTML += "_ " ;
             guessedWord.push('_ ')
         }
         var randChoiceElem = document.querySelector("#mysteryWord");
         document.querySelector("#mysteryWord").innerHTML = underscoreHTML;
     }
         
-    reset()
+    reset();
 
         var startGame = function (event){
             var playerGuess = event.key;
@@ -72,9 +66,6 @@
             }
             console.log('all the spots where we found the guessed letter!!!', indices);
             checkWord(playerGuess)
-            //while(lives > 0 && !hasWon){ //shorthand for !== true
-                // hasMatch = false;
-                // var playerGuess = event.key;
                 console.log("You guessed", playerGuess);
                 guesses.push(playerGuess);
                 console.log("guesses", guesses);
@@ -90,8 +81,7 @@
                 }else{
                     correctGuesses.push(playerGuess);
                     console.log(correctGuesses);
-                        // var correctLetterElem = document.querySelector("#mysteryWord");
-                        // document.querySelector("#mysteryWord").innerHTML = correctGuesses;
+
 
                 }
                 var hasWon = winner(guesses, wordArr);
@@ -106,13 +96,7 @@
                     reset()
 
                 }
-                // startGame();
 
-                //create reset button 
-                // var randChoice = randWord();
-                // correctGuesses = [];
-                // lives = [];
-                // guesses = [];
             }
 
         
@@ -135,11 +119,5 @@
 
 
         document.addEventListener("keyup", startGame);
-        //$("body").on("keyup", startGame);
-        // startGame();
-       
+  
 
-        console.log("player stats", player);
-
-
-        // return player;
