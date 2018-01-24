@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hangman Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 box">
+                <h1>Hangman Game</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 game">
+                <h3>Press any key to begin!</h3>
+                <br />
+                <h3 id="begin" class="hide">Great, let's begin!</h3>
+                <br />
+                <h4>Wins: 
+                    <span id="wins"></span>
+                </h4>
+                <br /> 
+                <h4>Current Word: 
+                    <span id="mysteryWord"></span>
+                </h4>
+                <br />
+                <h4>Number of guesses remaining:
+                    <span id="lives"></span>
+                </h4>
+                <br />
+                <h4>Letters already guessed:
+                    <span id="lettersDone"></span>
+                </h4>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://haganka.github.io/dom/dom.js"></script>
+    <script src="assets/javascript/game.js"></script>
+    <script type = "text/javascript">
+    
+//not working
+    var addGuessed = function(){
+            $("#lettersDone").text(guesses);
+            console.log($("#lettersDone").text(guesses));
+        }
+    $("#lettersDone").on("keyup", addGuessed);
+    
+    </script>
+
+
+</body>
+
+</html>
