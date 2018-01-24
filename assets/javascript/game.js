@@ -58,18 +58,19 @@
                 
                 if(hasWon){
                     wins++;
-                    // alert("you did it!");
-                    // console.log("you did it")
+                    alert("you did it!");
     
                     var winsElem = document.querySelector("#wins");
                     winsElem.innerHTML = wins;
 
-                    correctGuesses = [];
-                    lives = [];
-                    guesses = [];
-                    randWord();
-                    startGame();
                 }
+                startGame();
+
+                //create reset button 
+                // var randChoice = randWord();
+                // correctGuesses = [];
+                // lives = [];
+                // guesses = [];
             }
 
         
