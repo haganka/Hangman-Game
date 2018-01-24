@@ -36,39 +36,21 @@
 
         var gamePlay = function (){
             while(lives > 0 && !hasWon){ //shorthand for !== true
-                hasMatch = false;
+                // hasMatch = false;
                 var playerGuess = prompt("Guess a letter");
                 guesses.push(playerGuess);
-                console.log("guesses", guesses);
+                console.log("guesses", guesses)
 
-                for (var i = 0; i < wordArr.length; i++){
-                    if(wordArr[i] === playerGuess){
-                        hasMatch = true;
-                        correctGuesses.push(playerGuess);
-                        console.log(correctGuesses);
-                        
-                    }else{
-                        hasMatch = false;
-                        // lives--;
-                        // console.log("lives left", lives);
-                        }
-                    }
-                    if(hasMatch === false){
-                        lives--;
-                        console.log("lives left", lives)
-                    }
+                if(!wordArr.includes(playerGuess)){
+                    lives--;
+                    console.log("lives left", lives)
+                }else{
+                    correctGuesses.push(playerGuess);
+                    console.log(correctGuesses);
+                }
 
-                    hasWon = arrayContainsArray(guesses, wordArr);
-                        console.log("win?", hasWon);
-
-                // for(var i = 0; i < guesses.length; i++){
-                //     if(guesses.includes(wordArr[i])){
-                //         if(guesses.length >= wordArr.length){
-                //             hasWon = true;
-                //     }
-
-
-                // }
+                hasWon = arrayContainsArray(guesses, wordArr);
+                    console.log("win?", hasWon);
 
                 }
             }
@@ -82,7 +64,37 @@
                 });
               }
 
+            if(hasWon){
+                alert("you did it!");
+                console.log("you did it")
+            }
 
+
+
+                // for (var i = 0; i < wordArr.length; i++){
+                //     hasMatch = false;
+                //     if(wordArr[i] === playerGuess){
+                //         hasMatch = true;
+                //         correctGuesses.push(playerGuess);
+                //         console.log(correctGuesses);
+                        
+                //     }else{
+                //         hasMatch = false;
+                //         // lives--;
+                //         // console.log("lives left", lives);
+                //         }
+                //     }
+
+                
+
+                // for(var i = 0; i < guesses.length; i++){
+                //     if(guesses.includes(wordArr[i])){
+                //         if(guesses.length >= wordArr.length){
+                //             hasWon = true;
+                //     }
+
+
+                // }
 
             // if(hasMatch === false){
             //     numGuesses --;
