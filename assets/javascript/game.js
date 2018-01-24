@@ -6,6 +6,7 @@
         var hasWon = false;
         var guesses = [];
         var wins = 0;
+
        
         //chooses random word
         var randWord = function(){
@@ -15,7 +16,9 @@
         var randChoice = randWord();
             console.log("randChoice", randChoice);
 
+
         var wordArr = randChoice.split(""); 
+
         
         //Adds underscores to page
         // var randChoiceArr = randChoice.split("");
@@ -90,13 +93,14 @@
             
         }
 
-
         document.addEventListener("keyup", startGame);
         //$("body").on("keyup", startGame);
         startGame();
-       
+
 
         console.log("player stats", player);
 
 
+
         // return player;
+       
