@@ -15,6 +15,7 @@
         return campWords[Math.floor(Math.random() * campWords.length)];
     }
 
+
     function checkWord(playerGuess) {
         console.log('guessedWord ---', guessedWord.length, 'wordArr', wordArr.length, 'playerGuess', playerGuess);
 
