@@ -16,7 +16,6 @@
 
 
     function checkWord(playerGuess) {
-
         for (var i = 0; i < guessedWord.length; i ++) {
             if (playerGuess === wordArr[i]) {
                 guessedWord[i] = playerGuess
@@ -53,12 +52,12 @@
         var startGame = function (event){
             var playerGuess = event.key;
 
-            var indices = [];
-            for(var i=0; i<wordArr.length;i++) {
-                if (wordArr[i] === playerGuess) {
-                    indices.push(i);
-                }
-            }
+            // var indices = [];
+            // for(var i=0; i<wordArr.length;i++) {
+            //     if (wordArr[i] === playerGuess) {
+            //         indices.push(i);
+            //     }
+            // }
             // console.log('all the spots where we found the guessed letter!!!', indices);
             checkWord(playerGuess)
                 guesses.push(playerGuess);
@@ -90,13 +89,19 @@
                 }
             }
         
+            /** function that runs inside of checkWord to see if the player is out of lives
+         * @param {num} lives - number of lives left
+         */
         function loser (lives) {
             if(lives === 0){
                 return true;
             }
         }
 
-        
+        /** function that runs inside of checkWord to see if the player guessed all letters
+         * @param {array} guesses - user guesses
+         * @param {array} wordArray - array of letters in random word
+         */
         function winner (guesses, wordArray) {
             if (wordArray.length === 0) {
                 return false;
